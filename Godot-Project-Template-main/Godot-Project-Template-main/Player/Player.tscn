@@ -5,14 +5,14 @@
 [ext_resource path="res://Assets/Exhaust.png" type="Texture" id=3]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 513, 306 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Exhaust" type="Sprite" parent="."]
-position = Vector2( 1, 40 )
+position = Vector2( -2, 80 )
+scale = Vector2( 0.5, 1 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -20,14 +20,13 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2( 2, 2 )
-polygon = PoolVector2Array( 16, -6.6, 16, 8, 11.7, 8, 0.9, 16, -3, 16, -3, 15, -11.7, 8, -16, 8, -16, -6.6, -5, -15.9, 5, -16 )
+position = Vector2( 3, 1.5 )
+scale = Vector2( 1.3, 1.15 )
+polygon = PoolVector2Array( -4.61539, -30, 0, -30, 23.0769, -4.78262, 23.0769, 5.65216, -1.53848, 23.0435, -19.2308, 6.52173, -27.6923, 6.52173, -27.6923, -5.65219 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2( 3, 1.5 )
-scale = Vector2( 1.3, 1.15 )
-polygon = PoolVector2Array( -4.61539, -30, 0, -30, 23.0769, -4.78262, 23.0769, 5.65216, -1.53848, 23.0435, -19.2308, 6.52173, -27.6923, 6.52173, -27.6923, -5.65219 )
+polygon = PoolVector2Array( -7, -48, 6, -48, 12, -16, 23, -6, 43, -22, 48, -16, 48, 4, 34, 17, 48, 32, 47, 42, 39, 42, 19, 31, 14, 36, 14, 47, 12, 49, -15, 49, -17, 46, -17, 35, -21, 31, -42, 43, -49, 41, -49, 29, -36, 17, -49, 3, -49, -18, -45, -21, -27, -6, -13, -17 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

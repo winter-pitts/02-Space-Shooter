@@ -12,8 +12,8 @@ func _ready():
 
 func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.ZERO)
-	position.x = wrapf(position.x, 0,1024)
-	position.y = wrapf(position.y, 0, 600)
+	position.x = wrapf(position.x, 0, Global.VP.x)
+	position.y = wrapf(position.y, 0, Global.VP.y)
 	
 
 
@@ -28,6 +28,7 @@ func _on_Area2D_body_entered(body):
 		Effects.add_child(explosion)
 		explosion.global_position = global_position
 	queue_free()
+
 
 
 func _on_Timer_timeout():
